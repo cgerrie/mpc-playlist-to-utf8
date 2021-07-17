@@ -67,8 +67,9 @@ search_directory = PlaylistDirectory(search_directory_path)
 
 # read playlist file
 ascii_lines = []
-for ascii_line in open(playlist_file):
-	ascii_lines.append(ascii_line)
+with open(playlist_file) as input:
+	for ascii_line in input:
+		ascii_lines.append(ascii_line)
 
 # check header
 #print("TEST header read successfully: "+str(ascii_lines[0].strip() == "MPCPLAYLIST"))
